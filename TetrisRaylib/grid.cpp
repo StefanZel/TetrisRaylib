@@ -2,7 +2,7 @@
 #include <iostream>
 #include "colors.h"
 
-Grid::Grid() 
+Grid::Grid()
 {
 	numRows = 20;
 	numCols = 10;

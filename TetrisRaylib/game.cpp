@@ -1,5 +1,6 @@
 #include "game.h"
 #include <random>
+
 Game::Game()
 {
 	grid = Grid();
@@ -8,7 +9,6 @@ Game::Game()
 	nextBlock = GetRandomBlock();
 	gameOver = false;
 	score = 0;
-
 }
 
 Block Game::GetRandomBlock()
@@ -83,6 +83,7 @@ void Game::MoveBlockLeft()
 		}
 	}
 }
+
 void Game::MoveBlockLRight()
 {
 	if (!gameOver) 
@@ -94,6 +95,7 @@ void Game::MoveBlockLRight()
 		}
 	}
 }
+
 void Game::MoveBlockDown()
 {
 	if (!gameOver) 
@@ -131,6 +133,7 @@ void Game::RotateBlock()
 		}
 	}
 }
+
 void Game::LockBlock()
 {
 	std::vector<Position> tiles = currentBlock.GetCellPositions();
@@ -161,6 +164,7 @@ bool Game::BlockFits()
 	}
 	return true;
 }
+
 void Game::Reset()
 {
 	grid.Initialize();
@@ -186,6 +190,5 @@ void Game::UpdateScore(int LinesCleared, int moveDownPoints)
 	default:
 		break;
 	}
-
 	score += moveDownPoints;
 }

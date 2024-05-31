@@ -13,17 +13,17 @@ public:
 	int score;
 private:
 	Block GetRandomBlock();
-	std::vector<Block> GetAllBlocks();
+	Block currentBlock;
+	Block nextBlock;
 	bool IsBlockOutside();
+	bool BlockFits();
 	void RotateBlock();
 	void MoveBlockLeft();
 	void MoveBlockLRight();
 	void LockBlock();
-	bool BlockFits();
 	void Reset();
 	void UpdateScore(int LinesCleared,int moveDownPoints);
 	Grid grid;
 	std::vector<Block> blocks;
-	Block currentBlock;
-	Block nextBlock;
+	std::vector<Block> GetAllBlocks();
 };
